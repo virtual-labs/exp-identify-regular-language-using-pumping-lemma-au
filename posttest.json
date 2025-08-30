@@ -1,0 +1,107 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "What is the main purpose of the Pumping Lemma for regular languages?",
+      "answers": {
+        "a": "To prove that a language is regular",
+        "b": "To prove that a language is not regular",
+        "c": "To find the shortest string in a language",
+        "d": "To minimize a finite automaton"
+      },
+      "explanations": {
+        "a": "Incorrect. The lemma does not confirm regularity; it tests non-regularity.",
+        "b": "Correct! The Pumping Lemma is mainly used to show that certain languages are not regular.",
+        "c": "Incorrect. Shortest strings are unrelated to the lemma.",
+        "d": "Incorrect. Minimization is a separate concept."
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which condition must a string s = xyz satisfy according to the Pumping Lemma for regular languages?",
+      "answers": {
+        "a": "xy^i z ∈ L for all i ≥ 0",
+        "b": "x = y = z",
+        "c": "|x| = |y| = |z|",
+        "d": "s must be shorter than the pumping length"
+      },
+      "explanations": {
+        "a": "Correct! The pumped string xy^i z must remain in the language for all i ≥ 0.",
+        "b": "Incorrect. There is no requirement for x, y, z to be equal.",
+        "c": "Incorrect. Lengths are not required to be equal.",
+        "d": "Incorrect. Only strings longer than the pumping length are considered."
+      },
+      "correctAnswer": "a",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "What is the requirement for the substring y in s = xyz in the Pumping Lemma?",
+      "answers": {
+        "a": "y must be empty",
+        "b": "y must contain at least one symbol",
+        "c": "y must equal x",
+        "d": "y must be longer than x and z combined"
+      },
+      "explanations": {
+        "a": "Incorrect. y cannot be empty.",
+        "b": "Correct! y must contain at least one symbol to ensure pumping changes the string.",
+        "c": "Incorrect. y does not need to equal x.",
+        "d": "Incorrect. There is no such requirement."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "Why does the Pumping Lemma hold for regular languages?",
+      "answers": {
+        "a": "Because regular languages can be infinite",
+        "b": "Because finite automata have a finite number of states, creating loops in long strings",
+        "c": "Because all strings are periodic",
+        "d": "Because every string can be divided into three equal parts"
+      },
+      "explanations": {
+        "a": "Incorrect. Being infinite is not the reason.",
+        "b": "Correct! Loops in finite automata for strings longer than the number of states guarantee the lemma holds.",
+        "c": "Incorrect. Not all strings are periodic.",
+        "d": "Incorrect. Equal division is not required."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "What can be concluded if a string in a language violates the Pumping Lemma conditions?",
+      "answers": {
+        "a": "The language is regular",
+        "b": "The language is not regular",
+        "c": "The language is context-free",
+        "d": "Nothing can be concluded"
+      },
+      "explanations": {
+        "a": "Incorrect. Violation implies non-regularity.",
+        "b": "Correct! If any string violates the lemma, the language cannot be regular.",
+        "c": "Incorrect. Context-free property is unrelated here.",
+        "d": "Incorrect. Violation does allow a conclusion."
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which strings in a regular language are considered when applying the Pumping Lemma?",
+      "answers": {
+        "a": "All strings, regardless of length",
+        "b": "Only strings shorter than the pumping length",
+        "c": "Only strings longer than or equal to the pumping length",
+        "d": "Only strings that contain all symbols of the alphabet"
+      },
+      "explanations": {
+        "a": "Incorrect. Only sufficiently long strings are considered.",
+        "b": "Incorrect. Short strings do not need pumping.",
+        "c": "Correct! Strings with length ≥ pumping length are used to apply the lemma.",
+        "d": "Incorrect. Presence of all symbols is not required."
+      },
+      "correctAnswer": "c",
+      "difficulty": "intermediate"
+    }
+  ]
+}
