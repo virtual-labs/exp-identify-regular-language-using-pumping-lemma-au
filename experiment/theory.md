@@ -1,60 +1,66 @@
-<u><h3>Theory</h3></u>
-<h5>1.Regular Language </h5>
-<li>A language is regular if  it can be expressed in terms of regular expression </li>
-<li>They are languages that can be recognized by finite automata  </li>
-<li>Regular expressions can be thought of as the algebraic description of a regular language . </li>
-<li>Regular languages have closure properties, meaning that various operations on regular  languages (such as union, concatenation, and Kleene star) result in another regular language.
-</li>
+### Theory
 
-<h5>Pumping Lemma</h5>
-<b>Pumping:</b> The word pumping refers to generating many input strings by pushing a symbol in an input string repeatedly.
+#### 1. Regular Languages
+- A language is **regular** if it can be described using a **regular expression**.  
+- Regular languages are exactly the set of languages that can be recognized by **finite automata (DFA or NFA)**.  
+- Regular expressions provide an **algebraic representation** of these languages.  
+- Regular languages are **closed** under the following operations:  
+  - **Union**  
+  - **Concatenation**  
+  - **Kleene star** `(*)`  
+  - **Intersection and Complement**  
 
-<b>Lemma:</b>  The word Lemma refers to the intermediate theorem in a proof.
 
-There are two Pumping Lemmas, that are defined for
 
-<li>Regular Languages</li>
-<li>Context-Free Languages</li>
+#### 2. Pumping Lemma
+The **Pumping Lemma** is a theoretical tool used to **prove that certain languages are not regular**.
 
-<h5>Pumping Lemma For Regular Languages</h5>
-<h6>Theorem: </h6>
-<p>If A is a Regular Language, then A has a Pumping Length ‘P’ such that any string ‘S’ where |S ≥ P may be divided into three parts S = xyz such that the following conditions must be true:
+- **Pumping:** Repeating a specific substring multiple times.  
+- **Lemma:** An intermediate result (theorem) used in proofs.  
 
-1.) xy<sup>i</sup>z ∈ A for every i ≥ 0
+There are two versions of the pumping lemma:  
+1. For **regular languages**  
+2. For **context-free languages**  
 
-2.) |y| > 0
 
-3.) |xy| ≤ P</p>
+#### 3. Pumping Lemma for Regular Languages
 
-<p>Pumping Lemma is used as proof of the irregularity of a language. It means, that if a language is regular, it always satisfies the pumping lemma. If at least one string is made from pumping, not in language A, then A is not regular.</p>
+##### Theorem
+If **\(L\)** is a regular language, then there exists a **pumping length** \(p > 0\) such that every string \(s \in L\) with \(|s| \geq p\) can be split into three parts \(s = xyz\), satisfying:
 
-<h5>Steps to apply pumping lemma</h5>
-Step 1: Assume that Language A is Regular.
+1. \( xy^i z \in L \quad \forall \; i \geq 0 \)  
+2. \( |y| > 0 \)  
+3. \( |xy| \leq p \)  
 
-Step 2: It has to have a Pumping Length (say P).
 
-Step 3: All strings longer than P can be pumped |S| ≥ P.
 
-Step 4: Now, find a string ‘S’ in A such that |S| ≥ P.
+##### Explanation
+- In a **finite automaton**, if a string’s length exceeds the number of states (\(p\)), then by the **pigeonhole principle**, at least one state is **visited more than once**.  
+- This repetition forms a **loop**, corresponding to the substring \(y\).  
+- The loop can be **repeated (pumped)** or removed, generating new strings of the form \( xy^i z \).  
+- All such strings must also belong to the language \(L\), if \(L\) is regular.  
+- If this property fails for some language, then that language is **not regular**.  
 
-Step 5: Divide S into x y z strings.
 
-Step 6: Show that xy<sup>i</sup>z ∉ A for some i.
 
-Step 7: Then consider how S can be divided into x y z.
+#### 4. Steps to Apply the Pumping Lemma
+1. **Assume** the language \(L\) is regular.  
+2. Let \(p\) be the **pumping length**.  
+3. Choose a string \(s \in L\) with \(|s| \geq p\).  
+4. Split \(s = xyz\), where:  
+   - \(x\): Prefix (possibly empty)  
+   - \(y\): The substring to be pumped (\(|y| > 0\))  
+   - \(z\): Suffix (possibly empty)  
+   - Constraint: \( |xy| \leq p \)  
+5. **Pump \(y\):** Form strings of the type \( xy^i z \), for \(i = 0, 1, 2, \dots\).  
+6. **Check membership:** If for some \(i\), \( xy^i z \notin L \), then \(L\) is **not regular**.  
+7. Conclude that the assumption is false, hence \(L\) is **non-regular**.  
 
-Step 8: Show that none of the above strings satisfies all three pumping conditions simultaneously.
 
-Step 9: S cannot be pumped == CONTRADICTION.
-<p>Detailed description of the steps mentioned above:</p>
-<p><b>1.  Assume the language L is regular:</b> This is the starting point for the proof</p>
-<p><b>2. Identify the pumping length (p):</b> The pumping lemma guarantees the existence of a pumping length p for any regular language. This p applies to all strings in the language with a length greater than or equal to p (L ≥ p).</p>
-<p><b>3. Choose a string S ∈ L and |S| ≥ p:</b> Select a string S from the language L that has a length greater than or equal to the pumping length (p).</p>
-<p><b>4.Divide S into three substrings:</b> Divide the chosen string S into three substrings as follows:
 
-x: A prefix of S (can be empty).
-y: The substring to be "pumped" (must have at least one symbol).
-z: The suffix of S after y (can be empty).
-Therefore, the string S can be represented as S=xyz.</p>
-<P><b>5.Apply pumping for different values of i:</b> The lemma states that we can "pump" the substring y by inserting copies of it i times </P>
-<p><b>6.Analyze the resulting strings:</b> The key step is to analyze the resulting strings (xz, s, and x(y<sup>i</sup>)z) and show that at least one of them does not belong to the language L. This contradicts the initial assumption that L is regular.</p>
+#### 5. Why the Lemma Holds
+- Finite automata have a **limited number of states**.  
+- Long strings force **repetition of states**, creating **loops**.  
+- These loops can be repeated or skipped without leaving the language.  
+- This proves that **all regular languages satisfy the Pumping Lemma**.  
+- Therefore, the lemma is a powerful tool to **demonstrate non-regularity**.  

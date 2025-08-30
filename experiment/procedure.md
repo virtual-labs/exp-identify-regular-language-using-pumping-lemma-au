@@ -1,18 +1,51 @@
-<u><h3>Procedure</u></h3>
-<p>1. To Identify Regular languages using pumping lemma , select any example given and follow the instructions provided .</p>
-<p>Read the theorem and click on the start button to start the simulation </p>
-<div><img src="./images/proof.png" alt="select from the examples"><div>
-<p>select any example and follow the instructions provided </p>
-<div><img src="./images/examples.png" alt="select from the examples"><div>
-<p>Enter the value for pumping length P </p>
-<div><img src="./images/pumping.png" alt="select from the examples"><div>
-<p>Enter a string S that is in the language</p>
-<div><img src="./images/string.png" alt="select from the examples"><div>
-<p>decompose the  string S into xyz</p>
-<div><img src="./images/decompose.png" alt="select from the examples"><div>
-<p>Enter value of i</p>
-<div><img src="./images/ivalue.png" alt="select from the examples"><div>
-<p>The lemma states that we can "pump" the substring y  by inserting copies of it "i" times, if all the conditions are satisfied then the string is in the language </p>
-<div><img src="./images/success.png" alt="select from the examples"><div>
-<p>if any of the conditions are not satified then string is not in the language  you can always find the explanation by clicking on the explanation button </p>
-<div><img src="./images/failure.png" alt="select from the examples"><div>
+### Procedure  
+
+#### Step 1 – Click Start  
+Click on the **Start** button to begin the Pumping Lemma simulation.  
+![Click start](./images/step1start.png)  
+
+
+
+#### Step 2 – Select an Example  
+Choose a language example from the list (e.g., `L = {aⁿbⁿ : n ≥ 0}`) and click the **Test** button to proceed.  
+![Select example](./images/step2select.png)  
+
+
+
+#### Step 3 – Choose Pumping Length (p)  
+Enter a number **p** (pumping length) within the allowed range, as shown in the instructions.  
+This value will be used to split the string into three parts.  
+![Choose pumping length](./images/step3choose.png)  
+
+
+
+#### Step 4 – Enter String and Values  
+Provide the following inputs:  
+
+- **String (s):** Enter a string from the language with length ≥ p.  
+- **Decomposition (x, y, z):** Split the string into three parts following the Pumping Lemma conditions.  
+- **Value of i:** Enter a number to repeat the substring **y** *i* times.  
+
+![Enter string and values](./images/step4entervalues.png)  
+
+
+#### Step 5 – View the Result  
+
+After pumping the string, the tool displays the result explanation:
+
+- **Original String:** The input string chosen earlier.  
+- **Decomposition:** How the string is split into `x`, `y`, and `z`.  
+- **Pumped String:** The new string after repeating `y` *i* times.  
+- **Analysis:** Checks whether the new string still belongs to the language.  
+
+#### Result Cases  
+- **If it is Success:**  
+  The pumped string does not belong to the language, so a contradiction is found.  
+  This proves that the given language is **not regular**.  
+
+- **If it is Not Success:**  
+  The pumped string is still valid, so no contradiction is found.  
+  Try another split or a different value of *i* to test again.  
+
+![View result](./images/step5result.png)
+
