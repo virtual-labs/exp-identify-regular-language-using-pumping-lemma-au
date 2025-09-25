@@ -1,4 +1,4 @@
-### Procedure  
+
 
 #### Step 1 – Click Start  
 Click on the **Start** button to begin the Pumping Lemma simulation.  

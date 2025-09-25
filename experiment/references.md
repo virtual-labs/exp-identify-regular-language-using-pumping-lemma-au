@@ -1,4 +1,3 @@
-### References 
 
 1. Wikipedia, "Pumping Lemma for Regular Languages," [https://en.wikipedia.org/wiki/Pumping_lemma_for_regular_languages](https://en.wikipedia.org/wiki/Pumping_lemma_for_regular_languages)  
 
