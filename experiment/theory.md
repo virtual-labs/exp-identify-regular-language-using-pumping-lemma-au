@@ -1,4 +1,3 @@
-### Theory
 
 #### 1. Regular Languages
 - A language is **regular** if it can be described using a **regular expression**.  
